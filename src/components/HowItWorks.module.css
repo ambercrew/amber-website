@@ -1,0 +1,29 @@
+.section {
+  padding: clamp(56px, 7vw, 76px) clamp(20px, 4vw, 56px);
+  background: var(--mantine-color-body);
+  border-top: 1px solid var(--mantine-color-gray-2);
+}
+
+.heading {
+  margin: 0 0 8px;
+  font-size: clamp(26px, 3vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subheading {
+  margin: 0 auto clamp(32px, 4vw, 44px);
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.grid {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--sidebar-bg);
+  border: 1px solid var(--mantine-color-gray-2);
+}

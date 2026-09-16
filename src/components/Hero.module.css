@@ -1,0 +1,21 @@
+.hero {
+  padding: clamp(56px, 7vw, 84px) clamp(20px, 4vw, 56px) 0;
+}
+
+.title {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(38px, 5.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 56ch;
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.55;
+  text-wrap: pretty;
+}

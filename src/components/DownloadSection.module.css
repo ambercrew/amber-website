@@ -1,0 +1,32 @@
+.section {
+  padding: clamp(56px, 7vw, 72px) clamp(20px, 4vw, 56px);
+  background: var(--mantine-color-amber-6);
+  color: white;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+.subheading {
+  margin: 0;
+  max-width: 46ch;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--mantine-color-amber-1);
+}
+
+.grid {
+  width: 100%;
+  max-width: 760px;
+  margin-top: 8px;
+}
+
+.platformButton {
+  height: auto;
+  padding: 16px 10px;
+}

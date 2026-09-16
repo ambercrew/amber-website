@@ -1,0 +1,22 @@
+.section {
+  padding: clamp(56px, 7vw, 76px) clamp(20px, 4vw, 56px);
+  background: var(--mantine-color-body);
+  border-top: 1px solid var(--mantine-color-gray-2);
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.frame {
+  border-radius: var(--mantine-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--mantine-color-gray-2);
+  box-shadow: 0 20px 50px -24px rgba(32, 28, 21, 0.3);
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
