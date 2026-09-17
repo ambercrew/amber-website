@@ -1,14 +1,20 @@
 // Official Discord glyph (brand mark), from simple-icons (CC0).
 // Kept as a hand-rolled component instead of phosphor's DiscordLogo, whose
 // simplified glyph reads poorly at small button sizes.
-export function DiscordIcon({ size = 18 }: { size?: number }) {
+export function DiscordIcon({
+  size = 18,
+  color = "#5865F2",
+}: {
+  size?: number;
+  color?: string;
+}) {
   return (
     <svg
       role="img"
       viewBox="0 0 24 24"
       width={size}
       height={size}
-      fill="#5865F2"
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>Discord</title>

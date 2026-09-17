@@ -4,18 +4,22 @@
 
 .title {
   margin: 0;
-  max-width: 16ch;
-  font-size: clamp(38px, 5.4vw, 60px);
-  line-height: 1.04;
+  max-width: 20ch;
+  font-size: clamp(36px, 4.6vw, 56px);
+  line-height: 1.08;
   letter-spacing: -0.025em;
   font-weight: 700;
   text-wrap: balance;
 }
 
+.accent {
+  color: var(--mantine-color-amber-6);
+}
+
 .subtitle {
-  margin: 0;
-  max-width: 56ch;
-  font-size: clamp(16px, 1.4vw, 19px);
+  margin: 4px 0 8px;
+  max-width: 50ch;
+  font-size: clamp(17px, 1.6vw, 21px);
   line-height: 1.55;
   text-wrap: pretty;
 }

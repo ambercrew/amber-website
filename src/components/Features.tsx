@@ -1,111 +1,103 @@
-import { Badge, Box, Paper, SimpleGrid, Stack, Text, Title, ThemeIcon } from "@mantine/core";
+import { Badge, Box, Paper, Stack, Text, Title, ThemeIcon } from "@mantine/core";
 import {
-  AppWindow,
-  Clock,
-  Highlighter,
-  Cards,
+  LockOpen,
   FileArrowDown,
-  ListNumbers,
-  MagnifyingGlass,
-  Globe,
+  Devices,
+  CloudArrowUp,
   type Icon,
 } from "@phosphor-icons/react";
+import treeDetail from "../assets/screenshots/tree-detail.webp";
 import classes from "./Features.module.css";
 
-const features: { icon: Icon; color: string; title: string; body: string }[] = [
+type Feature = { icon: Icon; color: string; title: string; body: string };
+
+const core = {
+  title: "Incremental reading, without the learning curve",
+  body: "Reading, extracts and flashcards live in one prioritized queue, so you always work on what matters most. Keep your existing study habits and move into true incremental reading at your own pace.",
+};
+
+const features: Feature[] = [
   {
-    icon: AppWindow,
-    color: "amber",
-    title: "Distraction-free interface",
-    body: "Your material front and centre, everything else out of the way.",
-  },
-  {
-    icon: Clock,
+    icon: LockOpen,
     color: "orange",
-    title: "Incremental reading",
-    body: "Work through long material in passes instead of one sitting.",
-  },
-  {
-    icon: Highlighter,
-    color: "amber",
-    title: "Extracts, not notes",
-    body: "Highlight a passage and it becomes its own element, linked to its origin.",
-  },
-  {
-    icon: Cards,
-    color: "orange",
-    title: "Cards made in place",
-    body: "Cloze or question cards from extracts, without leaving the text.",
+    title: "100% free & open source",
+    body: "Free in cost and in freedom (MIT licensed). You own your data and can export it anytime.",
   },
   {
     icon: FileArrowDown,
-    color: "orange",
-    title: "Import your material",
-    body: "PDFs, articles and web pages, worked through at your own pace.",
-  },
-  {
-    icon: ListNumbers,
     color: "amber",
-    title: "Priority queue",
-    body: "Priority and scheduling pick what you see next, so you just open and read.",
+    title: "Effortless importing",
+    body: "Import PDFs, ePubs, web content and more straight from your device in seconds.",
   },
   {
-    icon: MagnifyingGlass,
+    icon: Devices,
     color: "orange",
-    title: "Command palette",
-    body: "Every action a keystroke away, so your hands never leave the keyboard.",
+    title: "Multiplatform ready",
+    body: "Runs on your phone, tablet or computer: Linux, Windows, macOS, iOS and Android.",
   },
   {
-    icon: Globe,
+    icon: CloudArrowUp,
     color: "amber",
-    title: "Free and open source",
-    body: "Runs on Linux, Windows, macOS and Android, with your data staying yours.",
+    title: "Cloud sync",
+    body: "Back up your library and sync progress, extracts and cards across devices.",
   },
 ];
 
 export function Features() {
   return (
     <Box component="section" id="features" className={classes.section}>
-      <Stack align="center" gap="md" ta="center">
-        <Badge variant="light" color="amber" size="lg" radius="xl" fw={600}>
-          Our features
-        </Badge>
-        <Title order={2} className={classes.heading}>
-          Read once. Let Amber handle the remembering.
-        </Title>
-        <Text c="dimmed" className={classes.subheading}>
-          Import your own material, extract what matters, and let the
-          priority queue decide what you see next — in an interface that
-          stays out of the way.
-        </Text>
-      </Stack>
+      <Box className={classes.inner}>
+        <Stack align="flex-start" gap="md">
+          <Badge variant="light" color="amber" size="lg" radius="xl" fw={600}>
+            Features
+          </Badge>
+          <Title order={2} className={classes.heading}>
+            Everything you need. Nothing in your way.
+          </Title>
+          <Text c="dimmed" className={classes.subheading}>
+            Whether you're importing massive PDFs, creating flashcards, or just
+            building better study habits, Amber adapts to you.
+          </Text>
+        </Stack>
 
-      <SimpleGrid
-        cols={{ base: 1, xs: 2, md: 4 }}
-        spacing="lg"
-        className={classes.grid}
-      >
-        {features.map((feature) => (
-          <Paper key={feature.title} p="lg" radius="md" className={classes.card}>
-            <Stack gap={12}>
-              <ThemeIcon
-                size={38}
-                radius="md"
-                variant="light"
-                color={feature.color}
-              >
-                <feature.icon size={19} weight="bold" />
-              </ThemeIcon>
-              <Text fw={600} fz="md">
-                {feature.title}
+        <div className={classes.grid}>
+          <Paper p="xl" radius="md" className={`${classes.card} ${classes.core}`}>
+            <Stack gap="md">
+              <Text fw={650} className={classes.coreTitle}>
+                {core.title}
               </Text>
-              <Text fz="sm" c="dimmed" lh={1.6}>
-                {feature.body}
+              <Text c="dimmed" lh={1.6}>
+                {core.body}
               </Text>
             </Stack>
+            <div className={classes.coreShot}>
+              <img
+                src={treeDetail}
+                alt="Amber's element tree: a source with its extracts and a flashcard nested underneath"
+                width={316}
+                height={196}
+                loading="lazy"
+              />
+            </div>
           </Paper>
-        ))}
-      </SimpleGrid>
+
+          {features.map((feature) => (
+            <Paper key={feature.title} p="lg" radius="md" className={classes.card}>
+              <Stack gap={12}>
+                <ThemeIcon size={38} radius="md" variant="light" color={feature.color}>
+                  <feature.icon size={19} weight="bold" />
+                </ThemeIcon>
+                <Text fw={600} fz="md">
+                  {feature.title}
+                </Text>
+                <Text fz="sm" c="dimmed" lh={1.6}>
+                  {feature.body}
+                </Text>
+              </Stack>
+            </Paper>
+          ))}
+        </div>
+      </Box>
     </Box>
   );
 }

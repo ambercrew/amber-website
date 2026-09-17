@@ -1,0 +1,8 @@
+html {
+  /* One content width for every full-width section, so edges line up. */
+  --content-max: 1200px;
+
+  scroll-behavior: smooth;
+  /* Keep anchored sections clear of the sticky header. */
+  scroll-padding-top: 72px;
+}

@@ -1,13 +1,44 @@
 .section {
   padding: clamp(56px, 7vw, 76px) clamp(20px, 4vw, 56px);
-  background: var(--mantine-color-body);
+  background: var(--sidebar-bg);
   border-top: 1px solid var(--mantine-color-gray-2);
-  align-items: center;
-  max-width: 1160px;
+
+  /* Dimmed gray-6 is only 4.7:1 on this grey; gray-7 brings it to 6:1. */
+  @mixin light {
+    --mantine-color-dimmed: var(--mantine-color-gray-7);
+  }
+}
+
+.inner {
+  max-width: var(--content-max);
   margin: 0 auto;
 }
 
+/* Screenshot and copy sit side by side at similar heights; the supporting
+   points run underneath so the text column doesn't outgrow the image. */
+.pair {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mantine-spacing-xl);
+  align-items: center;
+}
+
+@media (min-width: $mantine-breakpoint-md) {
+  .pair {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.points {
+  margin-top: clamp(40px, 5vw, 56px);
+  padding-top: clamp(28px, 3vw, 36px);
+  border-top: 1px solid var(--mantine-color-gray-3);
+}
+
 .frame {
+  /* Trim to the image: no inline-image baseline gap under it. */
+  line-height: 0;
   border-radius: var(--mantine-radius-md);
   overflow: hidden;
   border: 1px solid var(--mantine-color-gray-2);

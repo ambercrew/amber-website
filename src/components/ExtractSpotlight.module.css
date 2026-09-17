@@ -1,0 +1,38 @@
+.section {
+  padding: clamp(56px, 7vw, 84px) clamp(20px, 4vw, 56px);
+  background: var(--sidebar-bg);
+  border-top: 1px solid var(--mantine-color-gray-2);
+
+  /* Dimmed gray-6 is only 4.7:1 on this grey; gray-7 brings it to 6:1. */
+  @mixin light {
+    --mantine-color-dimmed: var(--mantine-color-gray-7);
+  }
+}
+
+.inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.frame {
+  overflow: hidden;
+  border-radius: var(--mantine-radius-md);
+  border: 1px solid var(--mantine-color-gray-3);
+  box-shadow: 0 24px 60px -24px rgba(32, 28, 21, 0.35);
+  background: var(--mantine-color-body);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

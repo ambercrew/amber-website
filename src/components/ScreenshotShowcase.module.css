@@ -1,13 +1,10 @@
 .wrap {
   padding: clamp(40px, 5vw, 56px) clamp(20px, 4vw, 56px) clamp(52px, 6vw, 72px);
-  background: linear-gradient(
-    var(--mantine-color-body) 0 48%,
-    var(--sidebar-bg) 48% 100%
-  );
+  background: var(--mantine-color-body);
 }
 
 .frame {
-  max-width: 1020px;
+  max-width: var(--content-max);
   margin: 0 auto;
   border: 1px solid var(--mantine-color-gray-3);
   border-radius: var(--mantine-radius-md);
@@ -20,5 +17,5 @@
 
 .caption {
   margin: 16px auto 0;
-  max-width: 1020px;
+  max-width: var(--content-max);
 }

@@ -1,0 +1,47 @@
+.section {
+  padding: clamp(56px, 7vw, 76px) clamp(20px, 4vw, 56px);
+  background: var(--sidebar-bg);
+  border-top: 1px solid var(--mantine-color-gray-2);
+
+  /* Dimmed gray-6 is only 4.7:1 on this grey; gray-7 brings it to 6:1. */
+  @mixin light {
+    --mantine-color-dimmed: var(--mantine-color-gray-7);
+  }
+}
+
+.heading {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(28px, 3.6vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.subheading {
+  margin: 0;
+  max-width: 58ch;
+  font-size: 16.5px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.grid {
+  max-width: 880px;
+  margin: clamp(32px, 4vw, 44px) auto 0;
+}
+
+.label {
+  letter-spacing: 0.06em;
+}
+
+.usual {
+  background: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-gray-2);
+}
+
+.amber {
+  background: var(--mantine-color-amber-0);
+  border: 1px solid var(--mantine-color-amber-2);
+  box-shadow: 0 18px 40px -24px rgba(168, 97, 7, 0.45);
+}

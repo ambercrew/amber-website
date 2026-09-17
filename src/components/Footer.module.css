@@ -7,4 +7,19 @@
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
+
+  /* Dimmed gray-6 is only 4.7:1 on this grey; gray-7 brings it to 6:1. */
+  @mixin light {
+    --mantine-color-dimmed: var(--mantine-color-gray-7);
+  }
+}
+
+.link {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: var(--mantine-color-dimmed);
+}
+
+.link:hover {
+  color: var(--mantine-color-text);
 }
